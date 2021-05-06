@@ -15,7 +15,7 @@ maxdate = max(df['date'])
 df = df[(df['date']==maxdate)]
 
 # Hex map data from the gpkg from here https://github.com/houseofcommonslibrary/uk-hex-cartograms-noncontiguous
-gpkg = os.path.dirname(__file__)+"/geopackages/LocalAuthorities-lowertier.gpkg'
+gpkg = os.path.dirname(__file__)+'/geopackages/LocalAuthorities-lowertier.gpkg'
 
 # Check the layer names. These are used to extract each map layer and sometimes change from those referenced below. Uncomment the statements below to check the names if needed.
 # for layername in fiona.listlayers(gpkg):
