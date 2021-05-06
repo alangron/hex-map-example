@@ -2,6 +2,7 @@
 import geopandas as gpd
 import pandas as pd
 import matplotlib.pyplot as plt
+import os
 # import fiona # fiona package is only used if you need to check the layer names, otherwise it is not required
 
 #  pull data from the COVID API
@@ -14,7 +15,7 @@ maxdate = max(df['date'])
 df = df[(df['date']==maxdate)]
 
 # Hex map data from the gpkg from here https://github.com/houseofcommonslibrary/uk-hex-cartograms-noncontiguous
-gpkg = 'C:/Users/Administrator/Documents/GitHub/hex-map-example/geopackages/LocalAuthorities-lowertier.gpkg'
+gpkg = os.path.dirname(__file__)+'/geopackages/LocalAuthorities-lowertier.gpkg'
 
 # Check the layer names. These are used to extract each map layer and sometimes change from those referenced below. Uncomment the statements below to check the names if needed.
 # for layername in fiona.listlayers(gpkg):
@@ -50,4 +51,6 @@ ax.set_facecolor('xkcd:dark grey')
 
 # display and save the image
 plt.show()
-fig.savefig("C:/Users/Administrator/Documents/GitHub/hex-map-example/out/hex-map-example-output.png")
+fig.savefig(os.path.dirname(__file__)+"/out/hex-map-example-output.png")
+
+print()
