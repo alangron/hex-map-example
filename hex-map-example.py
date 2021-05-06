@@ -29,7 +29,7 @@ background = gpd.read_file(gpkg, layer='7 Background')
 ltla_hex_data = ltla_hex.merge(df,on='Lacode',how='left')
 
 # Make a plot of the LTLAs colored by the number of cases
-fig, ax = plt.subplots(figsize=(10,13),dpi=(600))
+fig, ax = plt.subplots(figsize=(10,13),dpi=(150))
 
 # set the background colour for the UK map
 background.plot(ax=ax,alpha=0.3, color='xkcd:light grey')
